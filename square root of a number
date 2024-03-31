@@ -1,0 +1,22 @@
+class Solution{
+  public:
+    long long int floorSqrt(long long int x) 
+    {
+       long long int ans;
+       long long int start=0, end=x;
+       long long int mid=start+(end-start)/2;
+       while(start<=end)//for 1
+       {
+           if(mid*mid==x)
+           return mid;
+           else if(mid*mid>x)
+           end=mid-1;
+           else{
+               ans=mid;
+               start=mid+1;
+           }
+           mid=start+(end-start)/2;
+       }
+       return ans;
+    }
+};
